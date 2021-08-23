@@ -1,14 +1,12 @@
 class Book {
-  String _title;
-  bool _isRead;
+  String title;
+  String author;
+  bool isRead = false;
 
-  Book(this._title, this._isRead);
+  Book(this.title, this.author, this.isRead);
 
-  bool get isRead {
-    return _isRead;
-  }
 
-  void toggleRead() {
-    _isRead = !_isRead;
+  void toggleReadStatus() {
+    isRead = !isRead;
   }
 }

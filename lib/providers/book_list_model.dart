@@ -13,16 +13,16 @@ class BooksListModel extends ChangeNotifier {
       UnmodifiableListView(_books.where((book) => !book.isRead));
 
   UnmodifiableListView<Book> get readBooks =>
-      UnmodifiableListView(_books.where((book) => !book.isRead));
+      UnmodifiableListView(_books.where((book) => book.isRead));
 
   void addBook(Book book) {
     _books.add(book);
     notifyListeners();
   }
 
-  void markRead(Book book) {
+  void toggleRead(Book book) {
     final bookIndex = _books.indexOf(book);
-    _books[bookIndex].toggleRead();
+    _books[bookIndex].toggleReadStatus();
     notifyListeners();
   }
 
